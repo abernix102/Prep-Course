@@ -6,14 +6,14 @@ function crearGato (nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  let nueva = {
+  const nuevo = {
     nombre: nombre,
-    edad: edad,
-    meow : function(){
-      return 'Meow!';
+    edad:edad,
+    meow:function(){
+      return "Meow!"
     }
   }
-  return nueva;
+  return nuevo;
 }
 
 function agregarPropiedad (objeto, property) {
@@ -21,8 +21,9 @@ function agregarPropiedad (objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-  objeto[property] =null;
+  objeto[property]= null;
   return objeto;
+
 }
 
 function invocarMetodo (objeto, metodo) {
@@ -30,15 +31,14 @@ function invocarMetodo (objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
-  objeto[metodo]()
+  objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco (objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  let producto =  objetoMisterioso.numeroMisterioso * 5;
-  return producto;
+  return objetoMisterioso.numeroMisterioso * 5
 }
 
 function eliminarPropiedad (objeto, unaPropiedad) {
@@ -48,29 +48,30 @@ function eliminarPropiedad (objeto, unaPropiedad) {
   // Tu código:
   delete objeto[unaPropiedad];
   return objeto;
+  //eliminamos la propiedad que pasamos por argumento 
+
 }
 
 function nuevoUsuario (nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-  let objeto = {
-    nombre: nombre,
-    email: email,
-    password: password
+  let nuevoObjeto = {
+    nombre:nombre,
+    email:email,
+    password:password
   }
-  return objeto;
-
+  return nuevoObjeto
 }
 
 function tieneEmail (usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  if(usuario.email == null){
-    return false 
+  if(usuario.email){
+    return true;
   }else{
-    return true
+    return false;
   }
 }
 
@@ -79,8 +80,11 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (objeto[propiedad]) return true;
-  return false;
+  if(objeto[propiedad]){
+    return true
+  }else{
+    return false
+  }
 }
 
 function verificarPassword (usuario, password) {
@@ -88,8 +92,11 @@ function verificarPassword (usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(usuario.password == password)return true;
-  return false;
+  if(password === usuario['password']){
+    return true
+  }else{
+    return false
+  }
 }
 
 function actualizarPassword (usuario, nuevaPassword) {
@@ -115,9 +122,10 @@ function pasarUsuarioAPremium (usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
-  for(var i = 0; i < usuarios.length; i++){
-    usuarios[i].esPremium = true;
-  }return usuarios;
+  for(i=0; i < usuarios.length; i++){
+    usuarios[i]['esPremium'] = true;
+  }
+  return usuarios;
 }
 
 function sumarLikesDeUsuario (usuario) {
@@ -127,11 +135,12 @@ function sumarLikesDeUsuario (usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-  var sumaLikes = 0;
-  for(var i = 0; i < usuario.posts.length; i++){
-    sumaLikes = sumaLikes + usuario.posts[i].likes
+  let sumaDeLikes = 0;
+  for(i=0; i < usuario.posts.length; i++){
+    sumaDeLikes = sumaDeLikes + usuario.posts[i].likes;
+  //usurio.post[i] se refiere al array
   }
-  return sumaLikes;
+  return sumaDeLikes;
 }
 
 function agregarMetodoCalculoDescuento (producto) {
@@ -144,10 +153,11 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  producto.calcularPrecioDescuento = function(){
-    return this.precio -(this.precio * this.porcentajeDeDescuento)
+  producto.calcularPrecioDescuento = function (){
+    return producto.precio  - (producto.precio * producto.porcentajeDeDescuento)
   }
   return producto;
+
 }
 
 // No modificar nada debajo de esta línea

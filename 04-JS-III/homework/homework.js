@@ -80,7 +80,7 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-total = numeros.reduce((a,b) => a + b)
+total = numeros.reduce((a,b) => a + b, 0)
 return total
 }
 
@@ -91,7 +91,7 @@ function promedioResultadosTest(resultadosTest) {
   // Tu código:
   var promedio = 0;
   for(var i = 0; i< resultadosTest.length; i++){
-    promedio += resultadosTest[i];
+    promedio += resultadosTest[i]; //[i] nos devuelve el valor de la posicion en la qu esta 
   }
   return promedio / resultadosTest.length;
 }
@@ -193,31 +193,32 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  var nuevoArray = [];
-
-  for (let i = 0; i < array.length; i++){
+  var restuladomeses = [];
+  for(i = 0; i < array.length; i++){
     if(array[i] === 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre'){
-      nuevoArray.push(array[i])
+      restuladomeses.push(array[i]);
     }
   }
-  if(nuevoArray.length != 3){
-    return 'No se encontraron los meses pedidos'
+  if(restuladomeses.length === 3){
+    return restuladomeses;
+  }else {
+    return 'No se encontraron los meses pedidos';
   }
-  return nuevoArray
   }
 
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
-  let newArray = [];
-  for(let i = 0; i < array.length; i++){
-    if(array[i] > 100 && array[1] < 200){
-      newArray.push(array[i])
+  let numerosMayores = [];
+  for(i=0; i < array.length; i++){
+    if(array[i] > 100){
+      numerosMayores.push(array[i]);
     }
   }
-  return newArray;
+  return numerosMayores;
 }
+
 
 
 function breakStatement(numero) {
@@ -228,20 +229,21 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  var array = [];
-  var suma = numero;
-  for (var i = 0; i < 10; i++) {
-    suma = suma + 2;
-    if (suma == i) break;
-    else {
-      array.push(suma);
+  let nuevoarrayxd = [];
+  let suma = numero;
+  for(i=0; i < 10 ; i++){
+    suma = suma + 2
+    if( suma === i){
+      break
+    }else{
+      nuevoarrayxd.push(suma);
     }
   }
-  if (i < 10) {
-    return "Se interrumpió la ejecución";
-  } else {
-    return array;
-  } 
+  if(nuevoarrayxd.length === 10  ){
+    return nuevoarrayxd
+  }else{
+    return 'Se interrumpió la ejecución';
+  }
 }
 
 
@@ -252,17 +254,17 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
-  var array = [];
-  suma = numero;
-  for(let i = 1 ; i < 10; i++){
-    if(suma === 5){
+  let array = [];
+  let suma = numero;
+  for(i = 1; i < 11; i++){
+    if( i == 5){
       continue;
     }else{
-      suma = suma +2;
+      suma = suma + 2;
       array.push(suma);
     }
   }
-  return array;
+  return array
 }
 
 

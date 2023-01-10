@@ -1,0 +1,41 @@
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/002/003/720/non_2x/koi-fish-art-vector.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+#divClass {
+    text-align: center;
+}
+h1 {
+    color: brown;
+}
+
+#thirdDiv {
+    width: 500px;
+    display: flex;
+    height: 600px;
+    margin: 0 auto;
+    background-color: teal;
+    padding: 50px;
+    border: 5px;
+    border-color: blueviolet;
+    border-style: solid;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    padding: 10px;
+    list-style: none;
+}
+img {
+    max-width: 100%;
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+}
+
+#spanId {
+    font-size: 18px;
+    margin: 50px;
+}
